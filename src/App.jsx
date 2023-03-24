@@ -42,14 +42,6 @@ function App() {
         placeholder="Search..."
         onChange={(inputString) => searchItems(inputString.target.value)}
       />
-      <ul>
-        {list &&
-          Object.entries(list.Data).map(([coin]) =>
-            list.Data[coin].PlatformType === "blockchain" ? (
-              <li key={list.Data[coin].FullName}>{list.Data[coin].FullName}</li>
-            ) : null
-          )}
-      </ul>
 
       {searchInput.length > 0
         ? filteredResults.map((coin) =>
